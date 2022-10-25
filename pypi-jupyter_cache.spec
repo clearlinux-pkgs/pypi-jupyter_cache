@@ -4,7 +4,7 @@
 #
 Name     : pypi-jupyter_cache
 Version  : 0.5.0
-Release  : 14
+Release  : 15
 URL      : https://files.pythonhosted.org/packages/b3/07/feded9f29b7ae087e5b49b6f93f74c59f444300c2b226801e8417ae83a17/jupyter-cache-0.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b3/07/feded9f29b7ae087e5b49b6f93f74c59f444300c2b226801e8417ae83a17/jupyter-cache-0.5.0.tar.gz
 Summary  : A defined interface for working with a cache of jupyter notebooks.
@@ -90,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1658960142
+export SOURCE_DATE_EPOCH=1666712039
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,7 +117,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-jupyter_cache
-cp %{_builddir}/jupyter-cache-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-jupyter_cache/ab5a711cce75e49bdbd08bbcb728262e30580e5d
+cp %{_builddir}/jupyter-cache-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-jupyter_cache/ab5a711cce75e49bdbd08bbcb728262e30580e5d || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 pypi-dep-fix.py %{buildroot} nbclient
 echo ----[ mark ]----
