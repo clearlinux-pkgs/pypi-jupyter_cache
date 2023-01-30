@@ -4,7 +4,7 @@
 #
 Name     : pypi-jupyter_cache
 Version  : 0.5.0
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/b3/07/feded9f29b7ae087e5b49b6f93f74c59f444300c2b226801e8417ae83a17/jupyter-cache-0.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b3/07/feded9f29b7ae087e5b49b6f93f74c59f444300c2b226801e8417ae83a17/jupyter-cache-0.5.0.tar.gz
 Summary  : A defined interface for working with a cache of jupyter notebooks.
@@ -93,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1672285239
+export SOURCE_DATE_EPOCH=1675090953
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -104,6 +104,7 @@ export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -f
 export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . nbclient
+pypi-dep-fix.py . sqlalchemy
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
 export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
@@ -112,6 +113,7 @@ export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 pypi-dep-fix.py . nbclient
+pypi-dep-fix.py . sqlalchemy
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 popd
@@ -123,6 +125,7 @@ mkdir -p %{buildroot}/usr/share/package-licenses/pypi-jupyter_cache
 cp %{_builddir}/jupyter-cache-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-jupyter_cache/ab5a711cce75e49bdbd08bbcb728262e30580e5d || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 pypi-dep-fix.py %{buildroot} nbclient
+pypi-dep-fix.py %{buildroot} sqlalchemy
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
