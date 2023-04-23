@@ -1,5 +1,5 @@
 PKG_NAME := pypi-jupyter_cache
-URL = https://files.pythonhosted.org/packages/b3/07/feded9f29b7ae087e5b49b6f93f74c59f444300c2b226801e8417ae83a17/jupyter-cache-0.5.0.tar.gz
+URL = https://files.pythonhosted.org/packages/69/64/08dcc1f6fc54a263525edd23b5d2754793470c1c41a8dd82d52406f8d876/jupyter-cache-0.6.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
