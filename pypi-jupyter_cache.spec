@@ -5,7 +5,7 @@
 #
 Name     : pypi-jupyter_cache
 Version  : 0.6.1
-Release  : 19
+Release  : 20
 URL      : https://files.pythonhosted.org/packages/69/64/08dcc1f6fc54a263525edd23b5d2754793470c1c41a8dd82d52406f8d876/jupyter-cache-0.6.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/69/64/08dcc1f6fc54a263525edd23b5d2754793470c1c41a8dd82d52406f8d876/jupyter-cache-0.6.1.tar.gz
 Summary  : A defined interface for working with a cache of jupyter notebooks.
